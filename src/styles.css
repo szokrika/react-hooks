@@ -2,3 +2,21 @@
   font-family: sans-serif;
   text-align: center;
 }
+.interactive {
+  cursor: pointer;
+}
+
+button {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+pre {
+  padding: 10px;
+  text-align: left;
+  width: 300px;
+  margin: auto;
+  background-color: #efefef;
+  text-overflow: break-word;
+  word-wrap: break-word;
+}
