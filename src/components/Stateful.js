@@ -9,7 +9,7 @@ export default function Stateful() {
       <button className="interactive" onClick={() => setState(!state)}>
         <div>Boolean state</div>
       </button>
-      <div>{state ? "on" : "off"}</div>
+      <pre>{state ? "on" : "off"}</pre>
     </React.Fragment>
   );
 }
