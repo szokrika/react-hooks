@@ -6,7 +6,8 @@ export default function Context() {
   return (
     <div>
       <h3>useContext</h3>
-      <p>app name: {context.appName}</p>
+      <p>Context usage simplified, no render props needed</p>
+      <pre>app name: {context.appName}</pre>
     </div>
   );
 }

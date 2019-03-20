@@ -9,7 +9,8 @@ export default function Reducer() {
   return (
     <div>
       <h3>useReducer</h3>
-      <p>app name: {state.appName}</p>
+      <p>Redux type functionality</p>
+      <pre>app name: {state.appName}</pre>
       <button
         onClick={() => dispatch({ type: "hello", payload: "Hello Reducer" })}
       >

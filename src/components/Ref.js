@@ -10,6 +10,7 @@ export default function Ref() {
   return (
     <div>
       <h3>useRef</h3>
+      <p>Reference a DOM node directly</p>
       <input
         onChange={e => setValue(e.target.value)}
         ref={inputElement}

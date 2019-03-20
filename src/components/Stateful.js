@@ -5,6 +5,7 @@ export default function Stateful() {
   return (
     <React.Fragment>
       <h3>useState</h3>
+      <p>Set and use component state</p>
       <button className="interactive" onClick={() => setState(!state)}>
         <div>Boolean state</div>
       </button>

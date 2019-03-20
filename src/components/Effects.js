@@ -12,7 +12,7 @@ export default function Effects() {
   return (
     <React.Fragment>
       <h3>useEffect</h3>
-      <p>fetches a todo</p>
+      <p>Fetch data from an api endpoint</p>
       <pre>{JSON.stringify(state, null, 2)}</pre>
     </React.Fragment>
   );
