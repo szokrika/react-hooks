@@ -1,13 +1,17 @@
 import React, { useCallback } from "react";
 
-const cb = () => console.log("callback called");
-
-export default function Callback() {
-  useCallback(cb, []);
+export default function Callback({ a, b }) {
+  const memoizedCallback = useCallback(
+    () => {
+      console.log("memoized callback", a, b);
+    },
+    [a, b]
+  );
+  memoizedCallback();
   return (
     <div>
       <h3>useCallback</h3>
-      <p>Should log to console</p>
+      <p>logs to console</p>
     </div>
   );
 }
