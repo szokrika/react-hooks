@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../store/Context";
+import { AppContext } from "../store/AppContext";
 
 export default function Context() {
   const context = useContext(AppContext);
