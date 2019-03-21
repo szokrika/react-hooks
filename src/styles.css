@@ -19,4 +19,5 @@ pre {
   background-color: #efefef;
   text-overflow: break-word;
   word-wrap: break-word;
+  margin-bottom: 3rem;
 }
