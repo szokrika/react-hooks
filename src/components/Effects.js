@@ -10,10 +10,10 @@ export default function Effects() {
   }, []);
 
   return (
-    <React.Fragment>
+    <div className="component">
       <h3>useEffect</h3>
       <p>Fetch data from an api endpoint</p>
       <pre>{JSON.stringify(state, null, 2)}</pre>
-    </React.Fragment>
+    </div>
   );
 }

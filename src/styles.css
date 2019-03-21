@@ -1,23 +1,113 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
+  background: palegoldenrod;
 }
 .interactive {
   cursor: pointer;
 }
-
+.all-features {
+  background: #fff;
+  width: 80vw;
+  margin: auto;
+  box-shadow: 0px 0 5px rgba(0, 0, 0, 0.1);
+}
+.component {
+  border-bottom: 2px solid palegoldenrod;
+  padding: 15px 0;
+}
+.toggle {
+  height: 7px;
+  width: 40px;
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  border-radius: 100px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+.toggle::before {
+  content: "";
+  border-radius: 50%;
+  background: darkgrey;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  margin: 3px;
+}
+.toggle-on {
+  justify-content: flex-start;
+}
+.toggle-on::before {
+  background: green;
+}
+.toggle-off {
+  justify-content: flex-end;
+}
+.toggle-off::before {
+  background: red;
+}
+h1 {
+  padding: 1em;
+  margin: 0;
+}
 button {
   display: inline-block;
+  font-size: 15px;
   margin-bottom: 10px;
+  border-radius: 100px;
+  padding: 7px 30px;
+  color: palegoldenrod;
+  background: darkred;
+  display: inline-block;
+  margin-bottom: 1em;
+  text-shadow: 0px 0 5px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s ease;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+button:hover {
+  color: darkred;
+  background: palegoldenrod;
+  outline: none;
+}
+button:focus {
+  outline: 2px solid rosybrown;
 }
 
 pre {
-  padding: 10px;
+  padding: 30px;
   text-align: left;
-  width: 300px;
+  min-width: 300px;
+  max-width: 80%;
   margin: auto;
   background-color: #efefef;
   text-overflow: break-word;
   word-wrap: break-word;
   margin-bottom: 3rem;
+}
+pre.off {
+  color: red;
+}
+pre.on {
+  background-color: palegoldenrod;
+  color: green;
+}
+input {
+  outline: none;
+  padding: 7px 15px;
+  display: inline-block;
+  font-size: 15px;
+  border: 3px solid darkred;
+  color: #999;
+}
+input:focus {
+  color: initial;
 }

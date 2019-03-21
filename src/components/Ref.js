@@ -8,7 +8,7 @@ export default function Ref() {
     inputElement.current.focus();
   };
   return (
-    <div>
+    <div className="component">
       <h3>useRef</h3>
       <p>Reference a DOM node directly</p>
       <input

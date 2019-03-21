@@ -9,7 +9,7 @@ export default function Callback({ a, b }) {
   );
   memoizedCallback();
   return (
-    <div>
+    <div className="component">
       <h3>useCallback</h3>
       <p>logs to console</p>
     </div>

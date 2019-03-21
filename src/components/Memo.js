@@ -12,7 +12,7 @@ export default function Memo({ a, b }) {
   useMemo(() => computeExpensiveValue(a, b), [a, b]).then(console.log);
 
   return (
-    <div>
+    <div className="component">
       <h3>useMemo</h3>
       <p>logs to console</p>
     </div>
