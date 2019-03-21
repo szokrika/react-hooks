@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AppContext } from "../store/AppContext";
 
 export default function Effects() {
-  const [state, setState] = useState({});
+  const [data, setData] = useState(null);
+  const { state, dispatch } = useContext(AppContext);
 
   useEffect(() => {
+    dispatch({ type: "loading", payload: false });
     fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then(response => response.json())
-      .then(json => setState(json));
+      .then(json => setData(json))
+      .then(() => dispatch({ type: "loading", payload: false }));
   }, []);
 
   return (
     <div className="component">
       <h3>useEffect</h3>
       <p>Fetch data from an api endpoint</p>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
+      {state.loading && <p className="loading">Loading...</p>}
+      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
     </div>
   );
 }
