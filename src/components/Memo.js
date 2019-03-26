@@ -1,20 +1,28 @@
 import React, { useMemo } from "react";
 
-export default function Memo({ a, b }) {
-  const computeExpensiveValue = async (a, b) => {
-    return await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ type: "computeExpensiveValue", a, b });
-      }, 1500);
-    });
-  };
+const computeExpensiveValue = (x, y) => {
+  return x * y;
+};
 
-  useMemo(() => computeExpensiveValue(a, b), [a, b]).then(console.log);
+export default function Memo({ a, b }) {
+  // it should only run the function when a has changed
+  const expensiveValue = useMemo(() => computeExpensiveValue(a, b), [a]);
 
   return (
     <div className="component">
       <h3>useMemo</h3>
-      <p>logs to console</p>
+      <p>Should update if 'a' prop change, but not 'b'</p>
+      <pre>
+        {JSON.stringify(
+          {
+            a,
+            b,
+            expensiveValue
+          },
+          null,
+          2
+        )}
+      </pre>
     </div>
   );
 }

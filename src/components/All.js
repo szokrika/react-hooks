@@ -17,32 +17,33 @@ import Callback from "./Callback";
 import Memo from "./Memo";
 
 export default function All() {
-  const [a, setA] = useState(1);
-  const [c, setC] = useState(1);
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(10);
 
   const context = useContext(AppContext);
   const [state, dispatch] = useReducer(reducer, context);
 
-  const b = 10;
-
-  const update = value => setA(a + value);
-  const updateC = value => setC(c + value);
+  const updateA = value => setA(a + value);
+  const updateB = value => setB(b + value);
 
   useEffect(
     () => {
       if (a < 10) {
         setTimeout(() => {
-          update(2);
+          updateA(5);
         }, 3000);
       }
-      if (a > 7) {
-        updateC(7);
+
+      if (b < 60) {
+        setTimeout(() => {
+          updateB(10);
+        }, 1500);
       }
     },
-    [a]
+    [a, b]
   );
 
-  useLayoutEffect(() => console.log("useLayoutEffect"), [b]);
+  useLayoutEffect(() => console.log("useLayoutEffect if 'a' changes"), [a]);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
@@ -54,7 +55,7 @@ export default function All() {
         <Reducer />
         <Ref />
         <Callback a={a} b={b} />
-        <Memo a={a} b={b} c={c} />
+        <Memo state={state} a={a} b={b} />
       </div>
     </AppContext.Provider>
   );

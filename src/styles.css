@@ -87,11 +87,10 @@ pre {
   text-align: left;
   min-width: 300px;
   max-width: 80%;
-  margin: auto;
   background-color: #efefef;
   text-overflow: break-word;
   word-wrap: break-word;
-  margin-bottom: 3rem;
+  margin: 2rem auto;
 }
 pre.off {
   color: red;

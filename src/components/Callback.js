@@ -1,17 +1,18 @@
 import React, { useCallback } from "react";
 
+// useCallback(fn, deps) is equivalent to useMemo(() => fn, deps).
+
 export default function Callback({ a, b }) {
-  const memoizedCallback = useCallback(
-    () => {
-      console.log("memoized callback", a, b);
-    },
-    [a, b]
-  );
-  memoizedCallback();
+  const returnMyValue = () => b;
+  const valueBoundToMount = useCallback(returnMyValue, [])();
+  const valueBoundtoA = useCallback(returnMyValue, [a])();
   return (
     <div className="component">
       <h3>useCallback</h3>
-      <p>logs to console</p>
+      <p>Return 'b' only on component mount</p>
+      <pre>{valueBoundToMount}</pre>
+      <p>Return 'b' only when 'a' updates</p>
+      <pre>{valueBoundtoA}</pre>
     </div>
   );
 }
