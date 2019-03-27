@@ -15,6 +15,8 @@ import Reducer from "./Reducer";
 import Ref from "./Ref";
 import Callback from "./Callback";
 import Memo from "./Memo";
+// Custom hooks
+import Geolocation from "./custom/Geolocation";
 
 export default function All() {
   const [a, setA] = useState(0);
@@ -56,6 +58,8 @@ export default function All() {
         <Ref />
         <Callback a={a} b={b} />
         <Memo state={state} a={a} b={b} />
+        <h2>Custom Hooks</h2>
+        <Geolocation />
       </div>
     </AppContext.Provider>
   );

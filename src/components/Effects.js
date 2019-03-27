@@ -6,7 +6,7 @@ export default function Effects() {
   const { state, dispatch } = useContext(AppContext);
 
   useEffect(() => {
-    dispatch({ type: "loading", payload: false });
+    dispatch({ type: "loading", payload: true });
     fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then(response => response.json())
       .then(json => setData(json))
