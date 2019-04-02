@@ -8,10 +8,13 @@ export default function Stateful() {
       <p>Set and use component state</p>
 
       <div
+        data-testid="toggle"
         className={`toggle toggle-${state ? "on" : "off"}`}
         onClick={() => setState(!state)}
       />
-      <pre className={`${state ? "on" : "off"}`}>{state ? "on" : "off"}</pre>
+      <pre data-testid="toggle-output" className={`${state ? "on" : "off"}`}>
+        {state ? "on" : "off"}
+      </pre>
     </div>
   );
 }
