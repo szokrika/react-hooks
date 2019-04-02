@@ -58,7 +58,8 @@ export default function useGeolocation() {
       <h3>useGeolocation</h3>
       <p>Return geolocation only on component mount.</p>
       <small>
-        Codebox policy does not allow this but it should work on a regular page!
+        Codebox policy does not allow this on desktop but it should work on a
+        device!
       </small>
       <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>

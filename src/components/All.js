@@ -30,9 +30,9 @@ export default function All() {
 
   useEffect(
     () => {
-      if (a < 10) {
+      if (a < 40) {
         setTimeout(() => {
-          updateA(5);
+          updateA(13);
         }, 3000);
       }
 
