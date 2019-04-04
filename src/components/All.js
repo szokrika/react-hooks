@@ -55,7 +55,7 @@ export default function All() {
         <Effects />
         <Context />
         <Reducer />
-        <Ref />
+        <Ref defaultValue="test value" />
         <Callback a={a} b={b} />
         <Memo state={state} a={a} b={b} />
         <h2>Custom Hooks</h2>
