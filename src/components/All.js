@@ -11,12 +11,13 @@ import Callback from "./Callback";
 import Memo from "./Memo";
 // Custom hooks
 import Geolocation from "./custom/Geolocation";
+import UseFetchComp from "./custom/UseFetchComp";
 
 export default function All() {
   const [a, setA] = useState(0);
   const [b, setB] = useState(10);
 
-  const { translate } = useContext(I18nContext);
+  const { translate, langCode } = useContext(I18nContext);
   const { state } = useContext(AppContext);
 
   const updateA = value => setA(a + value);
@@ -41,6 +42,7 @@ export default function All() {
   return (
     <div className="all-features">
       <h1>{translate("title")}</h1>
+      <p>{translate("intro")}</p>
       <LanguageSelector />
       <Stateful />
       <Effects />
@@ -50,6 +52,7 @@ export default function All() {
       <Memo state={state} a={a} b={b} />
       <h2>{translate("custom")}</h2>
       <Geolocation />
+      <UseFetchComp />
     </div>
   );
 }

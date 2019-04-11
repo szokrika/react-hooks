@@ -1,5 +1,6 @@
 {
   "title": "Hello Hooks!",
+  "intro": "Welcome to learning hooks!",
   "state": "Set and use component state.",
   "custom": "Custom Hooks!"
 }

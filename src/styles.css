@@ -58,7 +58,7 @@ h1 {
   padding: 1em;
   margin: 0;
 }
-button {
+.button {
   display: inline-block;
   font-size: 15px;
   margin-bottom: 10px;
@@ -73,12 +73,12 @@ button {
   transition: background 0.3s ease;
   cursor: pointer;
 }
-button:hover {
+.button:hover {
   color: darkred;
   background: palegoldenrod;
   outline: none;
 }
-button:focus {
+.button:focus {
   outline: 2px solid rosybrown;
 }
 
@@ -99,7 +99,7 @@ pre.on {
   background-color: palegoldenrod;
   color: green;
 }
-input {
+.input {
   outline: none;
   padding: 7px 15px;
   display: inline-block;
@@ -107,6 +107,6 @@ input {
   border: 3px solid darkred;
   color: #999;
 }
-input:focus {
+.input:focus {
   color: initial;
 }

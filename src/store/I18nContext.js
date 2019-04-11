@@ -5,7 +5,8 @@ import hu from "../i18n/hu.json";
 
 const translations = { en, hu };
 
-const getTranslate = langCode => key => translations[langCode][key] || key;
+const getTranslate = langCode => key =>
+  translations[langCode][key] || `[${key}]`;
 
 const initialState = {
   langCode: "en",
@@ -36,7 +37,7 @@ export const I18nContextProvider = ({ children }) => {
   dispatch actions. */
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
+
   /* We're Providing state object (langCode and translate method
   in this case) and also the dispatch for the children components */
   return (

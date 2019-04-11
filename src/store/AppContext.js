@@ -5,6 +5,7 @@ const initialState = {
   loading: false,
   error: null
 };
+
 const AppContext = React.createContext(initialState);
 
 const AppContextProvider = ({ children }) => {
@@ -14,6 +15,8 @@ const AppContextProvider = ({ children }) => {
         return { ...state, loading: action.payload };
       case "hello":
         return { ...state, appName: action.payload };
+      case "bye":
+        return { ...state, appName: "bye" };
       default:
         return state;
     }
@@ -24,7 +27,7 @@ const AppContextProvider = ({ children }) => {
   dispatch actions. */
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
+
   /* We're Providing state object (langCode and translate method
   in this case) and also the dispatch for the children components */
   return (

@@ -16,10 +16,10 @@ function App() {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <I18nContextProvider>
-    <AppContextProvider>
+  <AppContextProvider>
+    <I18nContextProvider>
       <App />
-    </AppContextProvider>
-  </I18nContextProvider>,
+    </I18nContextProvider>
+  </AppContextProvider>,
   rootElement
 );
