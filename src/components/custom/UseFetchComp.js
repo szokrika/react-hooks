@@ -12,10 +12,12 @@ export default function UseFetchComp() {
   return (
     <div>
       <h3>Load data on demand with useFetch</h3>
+
+      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+
       <Button color="ternary" onClick={load}>
         Load data
       </Button>
-      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
     </div>
   );
 }

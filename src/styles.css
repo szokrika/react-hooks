@@ -110,3 +110,7 @@ pre.on {
 .input:focus {
   color: initial;
 }
+.select {
+  font-size: 20px;
+  line-height: 26px;
+}

@@ -21,7 +21,7 @@ export default function LanguageSelect(props) {
   );
 
   return (
-    <select onChange={onLanguageSelect}>
+    <select className="select" onChange={onLanguageSelect}>
       {renderOption("en")}
       {renderOption("hu")}
     </select>
