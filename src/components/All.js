@@ -12,8 +12,10 @@ import Memo from "./Memo";
 // Custom hooks
 import Geolocation from "./custom/Geolocation";
 import UseFetchComp from "./custom/UseFetchComp";
+import Modal from "./Modal";
 
 export default function All() {
+  const [modalOpen, setModalOpen] = useState(false);
   const [a, setA] = useState(0);
   const [b, setB] = useState(10);
 
@@ -51,6 +53,22 @@ export default function All() {
       <Callback a={a} b={b} />
       <Memo state={state} a={a} b={b} />
       <h2>{translate("custom")}</h2>
+      <button
+        className="button"
+        data-testid="ref-modal-button"
+        onClick={() => setModalOpen(true)}
+      >
+        Show Modal
+      </button>
+
+      {modalOpen && (
+        <Modal
+          title="test title"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          onClose={() => setModalOpen(false)}
+        />
+      )}
+      <hr />
       <Geolocation />
       <UseFetchComp />
     </div>
