@@ -1,6 +1,9 @@
 {
+  "loading": "Mentés...",
   "title": "Üdvözöl a Hooks!",
   "intro": "Itt kipróbálatom, hogy mit tudok!",
-  "state": "Komponens állapot használata.",
-  "custom": "Saját Hooks Funkciók!"
+  "state": "Komponens állapot (state) használata.",
+  "custom": "Saját hooks függvények!",
+  "fetch": "Adatlekérdezés API végpontról.",
+  "fetch-custom": "Adatlekérdezés API végpontról saját hook segítségével."
 }

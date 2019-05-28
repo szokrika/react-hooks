@@ -13,6 +13,7 @@ import Memo from "./Memo";
 import Geolocation from "./custom/Geolocation";
 import UseFetchComp from "./custom/UseFetchComp";
 import Modal from "./Modal";
+import { CLesson, FLesson } from "./Lesson";
 
 export default function All() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,6 +46,8 @@ export default function All() {
     <div className="all-features">
       <h1>{translate("title")}</h1>
       <p>{translate("intro")}</p>
+      <CLesson />
+      <FLesson />
       <LanguageSelector />
       <Stateful />
       <Effects />

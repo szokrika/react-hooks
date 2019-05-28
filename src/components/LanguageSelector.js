@@ -14,14 +14,14 @@ export default function LanguageSelect(props) {
   const onLanguageSelect = e =>
     dispatch({ type: "setLanguage", payload: e.target.value });
 
-  const renderOption = code => (
-    <option value={code} selected={code === langCode}>
-      {code}
-    </option>
-  );
+  const renderOption = code => <option value={code}>{code}</option>;
 
   return (
-    <select className="select" onChange={onLanguageSelect}>
+    <select
+      defaultValue={langCode}
+      className="select"
+      onChange={onLanguageSelect}
+    >
       {renderOption("en")}
       {renderOption("hu")}
     </select>

@@ -1,6 +1,9 @@
 {
+  "loading": "Loading...",
   "title": "Hello Hooks!",
   "intro": "Welcome to learning hooks!",
   "state": "Set and use component state.",
-  "custom": "Custom Hooks!"
+  "custom": "Custom Hooks!",
+  "fetch": "Fetch data from an API endpoint",
+  "fetch-custom": "Fetch data from an API using custom hook"
 }

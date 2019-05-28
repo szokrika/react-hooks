@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AppContext } from "../store/AppContext";
+import { I18nContext } from "../store/I18nContext";
 import useFetch from "./custom/useFetch";
 
 export default function Effects() {
+  const { translate } = useContext(I18nContext);
   const [data, setData] = useState(null);
   const { state, dispatch } = useContext(AppContext);
   const customData = useFetch(
@@ -21,12 +23,12 @@ export default function Effects() {
   return (
     <div className="component">
       <h3>useEffect</h3>
-      <p>Fetch data from an api endpoint</p>
-      {state.loading && <p className="loading">Loading...</p>}
+      <p>{translate("fetch")}</p>
+      {state.loading && <p className="loading">{translate("loading")}</p>}
       {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
 
-      <p>Fetch data using custom hook</p>
-      {state.loading && <p className="loading">Loading...</p>}
+      <p>{translate("fetch-custom")}</p>
+      {state.loading && <p className="loading">{translate("loading")}</p>}
       {customData && <pre>{JSON.stringify(customData, null, 2)}</pre>}
     </div>
   );
