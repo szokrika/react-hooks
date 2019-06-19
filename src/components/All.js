@@ -14,13 +14,14 @@ import Geolocation from "./custom/Geolocation";
 import UseFetchComp from "./custom/UseFetchComp";
 import Modal from "./Modal";
 import { CLesson, FLesson } from "./Lesson";
+import Animate from "./Animate";
 
 export default function All() {
   const [modalOpen, setModalOpen] = useState(false);
   const [a, setA] = useState(0);
   const [b, setB] = useState(10);
 
-  const { translate, langCode } = useContext(I18nContext);
+  const { translate } = useContext(I18nContext);
   const { state } = useContext(AppContext);
 
   const updateA = value => setA(a + value);
@@ -55,7 +56,9 @@ export default function All() {
       <Ref defaultValue="test value" />
       <Callback a={a} b={b} />
       <Memo state={state} a={a} b={b} />
+
       <h2>{translate("custom")}</h2>
+      <Animate />
       <button
         className="button"
         data-testid="ref-modal-button"
@@ -74,6 +77,24 @@ export default function All() {
       <hr />
       <Geolocation />
       <UseFetchComp />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
