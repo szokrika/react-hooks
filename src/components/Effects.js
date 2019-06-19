@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AppContext } from "../store/AppContext";
 import { I18nContext } from "../store/I18nContext";
-import useFetch from "./custom/useFetch";
+import useFetch from "./custom/hooks/useFetch";
 
 export default function Effects() {
   const { translate } = useContext(I18nContext);

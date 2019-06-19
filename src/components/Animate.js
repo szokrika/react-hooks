@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import useIntersect from "./custom/useIntersect";
+import useIntersect from "./custom/hooks/useIntersect";
 
 export default function Animate() {
   const [toggle, setToggle] = useState(false);

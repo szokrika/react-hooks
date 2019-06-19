@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "neutron-react-components";
-import useFetch from "./useFetch";
+import useFetch from "./hooks/useFetch";
 
 export default function UseFetchComp() {
   const [url, setUrl] = useState(null);

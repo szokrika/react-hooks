@@ -1,5 +1,5 @@
 import React from "react";
-import { useLockBodyScroll } from "./custom/useLockBodyScroll";
+import { useLockBodyScroll } from "./custom/hooks/useLockBodyScroll";
 
 export default function Modal({ title, content, onClose }) {
   // Call hook to lock body scroll
