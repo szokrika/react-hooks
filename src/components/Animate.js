@@ -15,11 +15,14 @@ export default function Animate() {
     margin: "auto"
   };
   const props = useSpring({ opacity: toggle ? 1 : 0 });
+
   const [ref, entry] = useIntersect({
     threshold: [0.5],
     rootMargin: "80px 0px 0px 0px"
   });
+
   const handleEntry = value => setToggle(value);
+
   useEffect(() => {
     if (entry.intersectionRatio >= 0.5) {
       handleEntry(true);
