@@ -13,8 +13,11 @@ export class CLesson extends React.Component {
       <div>
         <h3>Lesson class</h3>
         <p>{this.state.count}</p>
-        <button onClick={() => this.updateState(this.state.count + 1)}>
-          Update
+        <button
+          className="button"
+          onClick={() => this.updateState(this.state.count + 1)}
+        >
+          Increment
         </button>
       </div>
     );
@@ -25,9 +28,11 @@ export function FLesson() {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <h3>Lesson function</h3>
+      <h3>Increment as function</h3>
       <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Update</button>
+      <button className="button" onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
     </div>
   );
 }

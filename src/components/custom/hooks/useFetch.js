@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function useFetch(url, initialValue) {
   const [data, setData] = useState(initialValue);
-  const [error, setError] = useState(initialValue);
-  useEffect(
-    () => {
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    url && setLoading(true);
+    url &&
       fetch(url)
         .then(function(response) {
           if (!response.ok) {
@@ -12,16 +14,19 @@ export default function useFetch(url, initialValue) {
           }
           return response.json();
         })
-        .then(json => setData(json))
-        .catch(error =>
+        .then(json => {
+          setLoading(false);
+          setData(json);
+        })
+        .catch(error => {
+          setLoading(false);
+
           setError({
             type: error.name,
             status: error.message
-          })
-        );
-    },
-    [url]
-  );
+          });
+        });
+  }, [url]);
 
-  return { data, error };
+  return { data, error, loading };
 }

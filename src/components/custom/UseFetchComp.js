@@ -4,9 +4,14 @@ import useFetch from "./hooks/useFetch";
 
 export default function UseFetchComp() {
   const [url, setUrl] = useState(null);
-  const { data } = useFetch(url);
+  const { data, error, loading } = useFetch(url);
+  console.log(error);
+  // const load = () => {
+  //   setUrl("https://jsonplaceholder.typicode.com/photos/1");
+  // };
   const load = () => {
-    setUrl("https://jsonplaceholder.typicode.com/photos/1");
+    const random = Math.random();
+    setUrl(`https://api.icndb.com/jokes/random?search=${random}`);
   };
 
   return (
@@ -14,9 +19,10 @@ export default function UseFetchComp() {
       <h3>Load data on demand with useFetch</h3>
 
       {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+      {error && <pre>{JSON.stringify(error, null, 2)}</pre>}
 
       <Button color="ternary" onClick={load}>
-        Load data
+        {loading ? "Loading..." : "Load new joke"}
       </Button>
     </div>
   );

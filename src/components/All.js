@@ -45,11 +45,12 @@ export default function All() {
 
   return (
     <div className="all-features">
+      <LanguageSelector />
       <h1>{translate("title")}</h1>
       <p>{translate("intro")}</p>
-      <CLesson />
+      {/* <CLesson /> */}
       <FLesson />
-      <LanguageSelector />
+
       <Stateful />
       <Effects />
       <Context />
