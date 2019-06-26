@@ -13,7 +13,7 @@ import Memo from "./Memo";
 import Geolocation from "./custom/Geolocation";
 import UseFetchComp from "./custom/UseFetchComp";
 import Modal from "./Modal";
-import { CLesson, FLesson } from "./Lesson";
+import { FLesson } from "./Lesson";
 import Animate from "./Animate";
 
 export default function All() {
