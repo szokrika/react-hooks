@@ -15,6 +15,8 @@ import UseFetchComp from "./custom/UseFetchComp";
 import Modal from "./Modal";
 import { FLesson } from "./Lesson";
 import Animate from "./Animate";
+import usePageVisibility from "./custom/hooks/usePageVisibility";
+import useNetworkOnline from "./custom/hooks/useNetworkOnline";
 
 export default function All() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,6 +25,8 @@ export default function All() {
 
   const { translate } = useContext(I18nContext);
   const { state } = useContext(AppContext);
+  const { hidden } = usePageVisibility();
+  const { online } = useNetworkOnline();
 
   const updateA = value => setA(a + value);
   const updateB = value => setB(b + value);
@@ -39,12 +43,44 @@ export default function All() {
         updateB(10);
       }, 1500);
     }
-  }, [a, b]);
+  }, [a, b, updateA, updateB]);
 
   useLayoutEffect(() => console.log("useLayoutEffect if 'a' changes"), [a]);
 
+  // useEffect(() => {
+  //   navigator.vibrate([
+  //     500,
+  //     110,
+  //     500,
+  //     110,
+  //     450,
+  //     110,
+  //     200,
+  //     110,
+  //     170,
+  //     40,
+  //     450,
+  //     110,
+  //     200,
+  //     110,
+  //     170,
+  //     40,
+  //     500
+  //   ]);
+  // }, []);
+
   return (
     <div className="all-features">
+      <div>
+        {hidden ? (
+          <span>document hidden, pause whatever</span>
+        ) : (
+          <span>document visible, play whatever</span>
+        )}
+      </div>
+      <div>
+        {online ? <span>Network online</span> : <span>Network offline</span>}
+      </div>
       <LanguageSelector />
       <h1>{translate("title")}</h1>
       <p>{translate("intro")}</p>
