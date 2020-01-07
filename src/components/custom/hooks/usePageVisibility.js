@@ -14,7 +14,7 @@ export default function usePageVisibility() {
         resolver(document.hidden);
       });
     };
-  });
+  }, []);
 
   return { hidden };
 }

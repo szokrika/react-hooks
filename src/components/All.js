@@ -17,6 +17,8 @@ import { FLesson } from "./Lesson";
 import Animate from "./Animate";
 import usePageVisibility from "./custom/hooks/usePageVisibility";
 import useNetworkOnline from "./custom/hooks/useNetworkOnline";
+import useDeviceLight from "./custom/hooks/useDeviceLight";
+import useBatteryStatus from "./custom/hooks/useBatteryStatus";
 
 export default function All() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -69,6 +71,9 @@ export default function All() {
   //   ]);
   // }, []);
 
+  const { lux } = useDeviceLight();
+  const { batteryLevel } = useBatteryStatus();
+  console.log(lux);
   return (
     <div className="all-features">
       <div>
@@ -81,6 +86,7 @@ export default function All() {
       <div>
         {online ? <span>Network online</span> : <span>Network offline</span>}
       </div>
+      <div>Battery is at {batteryLevel}</div>
       <LanguageSelector />
       <h1>{translate("title")}</h1>
       <p>{translate("intro")}</p>

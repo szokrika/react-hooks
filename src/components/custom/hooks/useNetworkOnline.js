@@ -21,7 +21,7 @@ export default function useNetworkOnline() {
         resolver(null);
       });
     };
-  });
+  }, []);
 
   return { online };
 }
