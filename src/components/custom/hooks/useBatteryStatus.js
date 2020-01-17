@@ -4,12 +4,12 @@ export default function useBatteryStatus() {
   const [batteryLevel, setBatteryLevel] = useState();
 
   useEffect(() => {
-    navigator.getBattery().then(battery => {
-      setBatteryLevel(battery.level * 100);
-      battery.addEventListener("levelchange", () => {
-        setBatteryLevel(this.level * 100);
-      });
-    });
+    // navigator.getBattery().then(battery => {
+    //   setBatteryLevel(battery.level * 100);
+    //   battery.addEventListener("levelchange", function() {
+    //     setBatteryLevel(battery.level * 100);
+    //   });
+    // });
   }, []);
 
   return { batteryLevel };
